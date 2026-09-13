@@ -88,8 +88,8 @@
   .hero h1 .line:nth-child(2) span { animation-delay: .12s; color: var(--red); }
   .hero h1 .line:nth-child(3) span { animation-delay: .24s; -webkit-text-stroke: 2px var(--chalk); color: transparent; }
   @keyframes slideIn { from { transform: translateX(-40%) skewX(-12deg); } to { transform: none; } }
-  .hero.go h1 .line:nth-child(2) span { animation: slideIn .9s cubic-bezier(.2,.8,.1,1) .12s both, flash .5s ease-out 2.9s; }
-  @keyframes flash { 0% { text-shadow: 0 0 0 transparent; } 30% { text-shadow: 0 0 40px rgba(225,6,0,.9); } 100% { text-shadow: none; } }
+  .hero h1 .line:nth-child(2) span { transition: text-shadow .7s ease-out; text-shadow: 0 0 0 rgba(225,6,0,0); }
+  .hero.flash h1 .line:nth-child(2) span { text-shadow: 0 0 42px rgba(225,6,0,.95); transition-duration: .06s; }
   .hero .lede { max-width: 46ch; font-size: clamp(17px, 1.6vw, 20px); color: #cfccc4; margin: 28px 0 34px; }
   .hero .cta { display: flex; flex-wrap: wrap; gap: 14px; }
   .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; }
@@ -540,14 +540,20 @@
   /* Start lights: five pods on, then lights out */
   const pods = $$('#lights .pod');
   const hero = $('.hero');
+  let lightTimers = [];
   function startSequence() {
     if (reduce) return;
+    lightTimers.forEach(clearTimeout);
     pods.forEach(p => p.classList.remove('on'));
-    pods.forEach((p, i) => setTimeout(() => p.classList.add('on'), 500 + i * 450));
-    setTimeout(() => { pods.forEach(p => p.classList.remove('on')); hero.classList.add('go'); }, 500 + 5 * 450 + 700);
+    const at = (ms, fn) => lightTimers.push(setTimeout(fn, ms));
+    pods.forEach((p, i) => at(500 + i * 450, () => p.classList.add('on')));
+    const out = 500 + 5 * 450 + 700;
+    at(out, () => { pods.forEach(p => p.classList.remove('on')); hero.classList.add('flash'); });
+    at(out + 120, () => hero.classList.remove('flash'));
+    at(out + 1800, startSequence);
   }
   startSequence();
-  $('#lights').addEventListener('click', () => { hero.classList.remove('go'); startSequence(); });
+  $('#lights').addEventListener('click', startSequence);
 
   /* Nav, progress bar, hero parallax */
   const nav = $('#nav'), rev = $('#rev'), heroImg = $('#heroImg');
