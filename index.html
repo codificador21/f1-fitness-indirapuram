@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>F1 Fitness Indirapuram</title>
-<meta name="description" content="F1 Fitness, 2nd floor Aditya Mall, Indirapuram. Two floors of strength, cardio, functional training, Zumba and steam. Open 6 AM – 10 PM, all week.">
+<meta name="description" content="F1 Fitness, 2nd floor Aditya Mall, Indirapuram. Two floors of strength, cardio, functional training, Zumba and steam. Open 6 AM – 10 PM Mon–Sat, 7 AM – 8 PM Sunday.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Chakra+Petch:wght@500;600;700&family=Saira+Extra+Condensed:ital,wght@0,700;0,900;1,800;1,900&display=swap">
@@ -318,8 +318,8 @@
     </div>
     <aside class="tower" aria-label="Gym at a glance">
       <header><span>Timing tower</span><span class="status" id="towerStatus">Open</span></header>
-      <div class="row"><span class="pos">P1</span><span>Opens</span><span class="val">06:00</span></div>
-      <div class="row"><span class="pos">P2</span><span>Closes</span><span class="val">22:00</span></div>
+      <div class="row"><span class="pos">P1</span><span>Mon–Sat</span><span class="val">06–22</span></div>
+      <div class="row"><span class="pos">P2</span><span>Sunday</span><span class="val">07–20</span></div>
       <div class="row"><span class="pos">P3</span><span>Days a week</span><span class="val">7</span></div>
       <div class="row"><span class="pos">P4</span><span>Training floors</span><span class="val">2</span></div>
     </aside>
@@ -421,7 +421,7 @@
       <span class="label"><b>Session times</b> · Indian Standard Time</span>
       <h2 style="font-size:clamp(52px,7.5vw,110px);margin-top:18px">Open every<br>day of the<br><span style="color:var(--yellow)">week</span></h2>
       <div class="stats">
-        <div class="stat"><strong data-count="16">16<sup>h</sup></strong><span class="label">Open daily</span></div>
+        <div class="stat"><strong data-count="16">16<sup>h</sup></strong><span class="label">Mon–Sat hours</span></div>
         <div class="stat"><strong data-count="7">7<sup>d</sup></strong><span class="label">No off days</span></div>
         <div class="stat"><strong data-count="2">2<sup>fl</sup></strong><span class="label">Training floors</span></div>
       </div>
@@ -431,7 +431,7 @@
         <div><div class="label">Local time · IST</div><div class="clock" id="clock">--:--:--</div></div>
         <span class="status" id="boardStatus">Checking…</span>
       </div>
-      <div class="track-bar"><i id="dayBar"></i><em style="left:0">06:00</em><em style="right:0">22:00</em></div>
+      <div class="track-bar"><i id="dayBar"></i><em style="left:0" id="barOpen">06:00</em><em style="right:0" id="barClose">22:00</em></div>
       <div style="height:18px"></div>
       <table id="week">
         <tbody>
@@ -441,7 +441,7 @@
           <tr><td>Thursday</td><td>06:00 – 22:00</td></tr>
           <tr><td>Friday</td><td>06:00 – 22:00</td></tr>
           <tr><td>Saturday</td><td>06:00 – 22:00</td></tr>
-          <tr><td>Sunday</td><td>06:00 – 22:00</td></tr>
+          <tr><td>Sunday</td><td>07:00 – 20:00</td></tr>
         </tbody>
       </table>
       <div class="foot" id="boardFoot">Holiday hours may vary. Call ahead on festival days.</div>
@@ -492,7 +492,7 @@
       <dl class="facts">
         <div><dt>Address</dt><dd>2nd Floor, Aditya Mall, Aditya Mega City,<br>Vaibhav Khand, Indirapuram, Ghaziabad, UP 201014</dd></div>
         <div><dt>Phone</dt><dd><a href="tel:+919667752485">+91 96677 52485</a></dd></div>
-        <div><dt>Hours</dt><dd>06:00 AM – 10:00 PM, all 7 days</dd></div>
+        <div><dt>Hours</dt><dd>Mon–Sat: 06:00 AM – 10:00 PM<br>Sunday: 07:00 AM – 08:00 PM</dd></div>
         <div><dt>Getting here</dt><dd>Take the lift or escalator to the second floor, then follow the red F1 sign.</dd></div>
       </dl>
       <div class="cta" style="display:flex;flex-wrap:wrap;gap:14px">
@@ -526,7 +526,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="assets/logo.png" alt="" width="40" height="40"><span class="label">F1 Fitness · Indirapuram</span></a>
-    <span class="label">2nd Floor, Aditya Mall · Open 6 AM – 10 PM</span>
+    <span class="label">2nd Floor, Aditya Mall · Mon–Sat 6 AM–10 PM · Sun 7 AM–8 PM</span>
     <a class="label" href="https://www.facebook.com/F1FitnessIndirapuram/" target="_blank" rel="noopener" style="color:var(--chalk)">Facebook ↗</a>
   </div>
 </footer>
@@ -612,27 +612,33 @@
   }
 
   /* Timing board: live IST clock and open/closed status */
-  const clock = $('#clock'), boardStatus = $('#boardStatus'), towerStatus = $('#towerStatus'), dayBar = $('#dayBar'), foot = $('#boardFoot');
+  const clock = $('#clock'), boardStatus = $('#boardStatus'), towerStatus = $('#towerStatus'), dayBar = $('#dayBar'), foot = $('#boardFoot'), barOpen = $('#barOpen'), barClose = $('#barClose');
   const rows = $$('#week tr');
   const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', weekday: 'long', hour12: false });
   function tickClock() {
     const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
     const h = +parts.hour % 24, m = +parts.minute, s = +parts.second;
     clock.textContent = `${String(h).padStart(2, '0')}:${parts.minute}:${parts.second}`;
-    const mins = h * 60 + m + s / 60, open = mins >= 360 && mins < 1320;
+    const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+    // Opening minutes from midnight: Sunday 07:00–20:00, other days 06:00–22:00
+    const hoursFor = d => d === 'Sunday' ? [420, 1200] : [360, 1320];
+    const hhmm = v => `${String(Math.floor(v / 60)).padStart(2, '0')}:${String(v % 60).padStart(2, '0')}`;
+    const [o, c] = hoursFor(parts.weekday);
+    const mins = h * 60 + m + s / 60, open = mins >= o && mins < c;
     [boardStatus, towerStatus].forEach(el => {
       el.textContent = open ? 'Open now' : 'Closed now';
       el.style.setProperty('--st', open ? '#3ddc84' : '#E10600');
     });
-    const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
     rows.forEach((r, i) => r.classList.toggle('today', days[i] === parts.weekday));
-    dayBar.style.setProperty('--day', Math.max(0, Math.min(100, (mins - 360) / 960 * 100)) + '%');
+    barOpen.textContent = hhmm(o); barClose.textContent = hhmm(c);
+    dayBar.style.setProperty('--day', Math.max(0, Math.min(100, (mins - o) / (c - o) * 100)) + '%');
     if (open) {
-      const left = Math.floor(1320 - mins);
+      const left = Math.floor(c - mins);
       foot.textContent = `${Math.floor(left / 60)}h ${left % 60}m left in today's session. Holiday hours may vary.`;
     } else {
-      const until = Math.ceil((mins < 360 ? 360 - mins : 1440 - mins + 360));
-      foot.textContent = `Doors open in ${Math.floor(until / 60)}h ${until % 60}m. See you at 06:00.`;
+      const next = mins < o ? o : hoursFor(days[(days.indexOf(parts.weekday) + 1) % 7])[0];
+      const until = Math.ceil(mins < o ? o - mins : 1440 - mins + next);
+      foot.textContent = `Doors open in ${Math.floor(until / 60)}h ${until % 60}m. See you at ${hhmm(next)}.`;
     }
   }
   tickClock(); setInterval(tickClock, 1000);
