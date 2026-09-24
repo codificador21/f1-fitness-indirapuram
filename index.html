@@ -186,9 +186,10 @@
   .gallery button:hover img { transform: scale(1.07); filter: none; }
   .gallery button span { position: absolute; left: 0; bottom: 0; padding: 8px 12px; background: var(--asphalt); font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; transform: translateY(100%); transition: transform .35s; }
   .gallery button:hover span, .gallery button:focus-visible span { transform: none; }
-  .g1 { grid-column: span 4; grid-row: span 3; } .g2 { grid-column: span 2; grid-row: span 2; } .g3 { grid-column: span 2; grid-row: span 2; }
-  .g4 { grid-column: span 2; grid-row: span 3; } .g5 { grid-column: span 2; grid-row: span 2; } .g6 { grid-column: span 2; grid-row: span 2; }
-  .g7 { grid-column: span 2; grid-row: span 2; } .g8 { grid-column: span 2; grid-row: span 2; }
+  /* two classes, so these beat `.gallery button { all: unset }` */
+  .gallery .g1 { grid-column: span 4; grid-row: span 3; } .gallery .g2 { grid-column: span 2; grid-row: span 2; } .gallery .g3 { grid-column: span 2; grid-row: span 2; }
+  .gallery .g4 { grid-column: span 2; grid-row: span 3; } .gallery .g5 { grid-column: span 2; grid-row: span 2; } .gallery .g6 { grid-column: span 2; grid-row: span 2; }
+  .gallery .g7 { grid-column: span 2; grid-row: span 2; } .gallery .g8 { grid-column: span 2; grid-row: span 2; }
   .lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(5,5,7,.94); display: grid; place-items: center; padding: 24px; }
   .lightbox img { max-height: 84vh; width: auto; animation: lbIn .45s cubic-bezier(.2,.8,.1,1); }
   @keyframes lbIn { from { transform: scale(.94) translateY(16px); opacity: 0; } }
