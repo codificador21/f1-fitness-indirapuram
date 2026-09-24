@@ -38,7 +38,6 @@
     -webkit-font-smoothing: antialiased;
   }
   img { max-width: 100%; display: block; }
-  picture { display: contents; }
   .hero-grid > *, .circuit-grid > *, .board-grid > *, .visit-grid > *, .sec-head > *, .prog-grid > *, .stint-grid > * { min-width: 0; }
   .hero h1, .sector h3, .visit h2, .sec-head h2 { overflow-wrap: anywhere; }
   a { color: inherit; }
@@ -355,7 +354,7 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="bg"><picture><source type="image/avif" srcset="assets/hero-overview-800.avif 800w, assets/hero-overview-1600.avif 1600w" sizes="100vw"><img id="heroImg" src="assets/hero-overview-1600.jpg" alt="Wide view of the F1 Fitness floor at Aditya Mall with the mezzanine, statue lounge and functional rig" srcset="assets/hero-overview-800.jpg 800w, assets/hero-overview-1600.jpg 1600w" sizes="100vw" width="1600" height="1200" decoding="async" fetchpriority="high"></picture></div>
+  <div class="bg"><img id="heroImg" src="assets/hero-overview.jpg" alt="Wide view of the F1 Fitness floor at Aditya Mall with the mezzanine, statue lounge and functional rig"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="lights" id="lights" aria-hidden="true">
@@ -395,52 +394,52 @@
     <div class="circuit-grid">
       <div class="stage" id="stage" aria-hidden="true">
         <div class="bar" id="stageBar"></div>
-        <picture><source type="image/avif" srcset="assets/entrance-800.avif 800w, assets/entrance-1600.avif 1600w" sizes="(max-width: 1020px) 60vw, 700px"><img class="active" src="assets/entrance-1600.jpg" alt="" srcset="assets/entrance-800.jpg 800w, assets/entrance-1600.jpg 1600w" sizes="(max-width: 1020px) 60vw, 700px" width="975" height="1300" decoding="async"></picture>
-        <picture><source type="image/avif" srcset="assets/dumbbells-800.avif 800w, assets/dumbbells-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/dumbbells-1600.jpg" alt="" srcset="assets/dumbbells-800.jpg 800w, assets/dumbbells-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="975" height="1300" decoding="async"></picture>
-        <picture><source type="image/avif" srcset="assets/cardio-treadmills-800.avif 800w, assets/cardio-treadmills-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/cardio-treadmills-1600.jpg" alt="" srcset="assets/cardio-treadmills-800.jpg 800w, assets/cardio-treadmills-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="975" height="1300" decoding="async"></picture>
-        <picture><source type="image/avif" srcset="assets/functional-800.avif 800w, assets/functional-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/functional-1600.jpg" alt="" srcset="assets/functional-800.jpg 800w, assets/functional-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1500" height="1125" decoding="async"></picture>
-        <picture><source type="image/avif" srcset="assets/studio-800.avif 800w, assets/studio-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/studio-1600.jpg" alt="" srcset="assets/studio-800.jpg 800w, assets/studio-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1400" height="1050" decoding="async"></picture>
-        <picture><source type="image/avif" srcset="assets/lounge-800.avif 800w, assets/lounge-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/lounge-1600.jpg" alt="" srcset="assets/lounge-800.jpg 800w, assets/lounge-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="975" height="1300" decoding="async"></picture>
+        <img class="active" src="assets/entrance.jpg" alt="">
+        <img src="assets/dumbbells.jpg" alt="">
+        <img src="assets/cardio-treadmills.jpg" alt="">
+        <img src="assets/functional.jpg" alt="">
+        <img src="assets/studio.jpg" alt="">
+        <img src="assets/lounge.jpg" alt="">
         <div class="hud"><span class="label" id="hudName">Pit entry</span><strong id="hudNum">S0</strong></div>
       </div>
       <div class="sectors" id="sectors">
         <article class="sector active" data-name="Pit entry">
-          <picture><source type="image/avif" srcset="assets/entrance-800.avif 800w, assets/entrance-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/entrance-1600.jpg" alt="F1 Fitness entrance with the logo sign at Aditya Mall" loading="lazy" srcset="assets/entrance-800.jpg 800w, assets/entrance-1600.jpg 1600w" sizes="100vw" width="975" height="1300" decoding="async"></picture>
+          <img class="m-img" src="assets/entrance.jpg" alt="F1 Fitness entrance with the logo sign at Aditya Mall" loading="lazy">
           <div class="tag"><span class="chip">PIT ENTRY</span><span class="label">2nd floor, Aditya Mall</span></div>
           <h3>Take the lift. Start your lap.</h3>
           <p>Head up to the second floor of Aditya Mall and look for the red F1 sign. The glass doors open onto the main floor, and a trainer will show you around on your first visit.</p>
           <ul><li>Right inside the mall</li><li>Guided first session</li></ul>
         </article>
         <article class="sector" data-name="Strength deck">
-          <picture><source type="image/avif" srcset="assets/dumbbells-800.avif 800w, assets/dumbbells-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/dumbbells-1600.jpg" alt="Long rack of dumbbells at F1 Fitness" loading="lazy" srcset="assets/dumbbells-800.jpg 800w, assets/dumbbells-1600.jpg 1600w" sizes="100vw" width="975" height="1300" decoding="async"></picture>
+          <img class="m-img" src="assets/dumbbells.jpg" alt="Long rack of dumbbells at F1 Fitness" loading="lazy">
           <div class="tag"><span class="chip">SECTOR 1</span><span class="label">Lower floor</span></div>
           <h3>The strength deck</h3>
           <p>Racks of dumbbells, benches, cable stations and plate-loaded machines, kept in good shape and spread out so you aren't waiting on kit at peak hours.</p>
           <ul><li>Free weights</li><li>Machines</li><li>Benches &amp; racks</li></ul>
         </article>
         <article class="sector" data-name="Cardio straight">
-          <picture><source type="image/avif" srcset="assets/cardio-treadmills-800.avif 800w, assets/cardio-treadmills-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/cardio-treadmills-1600.jpg" alt="Row of treadmills beside floor-to-ceiling windows" loading="lazy" srcset="assets/cardio-treadmills-800.jpg 800w, assets/cardio-treadmills-1600.jpg 1600w" sizes="100vw" width="975" height="1300" decoding="async"></picture>
+          <img class="m-img" src="assets/cardio-treadmills.jpg" alt="Row of treadmills beside floor-to-ceiling windows" loading="lazy">
           <div class="tag"><span class="chip">SECTOR 2</span><span class="label">Upper floor</span></div>
           <h3>The long straight</h3>
           <p>A row of treadmills against floor-to-ceiling windows looking out over Indirapuram, with spin bikes and cross-trainers overlooking the floor below.</p>
           <ul><li>Treadmills</li><li>Spin bikes</li><li>City view</li></ul>
         </article>
         <article class="sector" data-name="Functional zone">
-          <picture><source type="image/avif" srcset="assets/functional-800.avif 800w, assets/functional-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/functional-1600.jpg" alt="Functional training area with turf, battle ropes and punch bags" loading="lazy" srcset="assets/functional-800.jpg 800w, assets/functional-1600.jpg 1600w" sizes="100vw" width="1500" height="1125" decoding="async"></picture>
+          <img class="m-img" src="assets/functional.jpg" alt="Functional training area with turf, battle ropes and punch bags" loading="lazy">
           <div class="tag"><span class="chip">SECTOR 3</span><span class="label">Upper floor</span></div>
           <h3>CrossFit &amp; functional</h3>
           <p>Turf lane for sled work, battle ropes, punch bags, medicine balls and a full rig for pull-ups and circuits. This is where the conditioning happens.</p>
           <ul><li>Turf track</li><li>Battle ropes</li><li>Boxing bags</li><li>Rig</li></ul>
         </article>
         <article class="sector" data-name="Studio">
-          <picture><source type="image/avif" srcset="assets/studio-800.avif 800w, assets/studio-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/studio-1600.jpg" alt="Yellow group-class studio with JOIN THE RACE on the wall" loading="lazy" srcset="assets/studio-800.jpg 800w, assets/studio-1600.jpg 1600w" sizes="100vw" width="1400" height="1050" decoding="async"></picture>
+          <img class="m-img" src="assets/studio.jpg" alt="Yellow group-class studio with JOIN THE RACE on the wall" loading="lazy">
           <div class="tag"><span class="chip">STUDIO</span><span class="label">Group classes</span></div>
           <h3>The yellow studio</h3>
           <p>Wooden floor, full mirrors and steppers, used for regular Zumba and group sessions. Ask at the front desk for this week's class times.</p>
           <ul><li>Zumba</li><li>Aerobics</li><li>Stretch &amp; mobility</li></ul>
         </article>
         <article class="sector" data-name="Paddock lounge">
-          <picture><source type="image/avif" srcset="assets/lounge-800.avif 800w, assets/lounge-1600.avif 1600w" sizes="100vw"><img class="m-img" src="assets/lounge-1600.jpg" alt="Lounge with gold statue, red sofa and chequered floor" loading="lazy" srcset="assets/lounge-800.jpg 800w, assets/lounge-1600.jpg 1600w" sizes="100vw" width="975" height="1300" decoding="async"></picture>
+          <img class="m-img" src="assets/lounge.jpg" alt="Lounge with gold statue, red sofa and chequered floor" loading="lazy">
           <div class="tag"><span class="chip">CHEQUERED FLAG</span><span class="label">Cool-down</span></div>
           <h3>Steam &amp; the paddock</h3>
           <p>Finish with a steam bath, then take a seat on the chequered-floor lounge under the gold statue. It's where members hang around after a session.</p>
@@ -509,14 +508,14 @@
       <p>Tap a photo to see it full size. Use the arrow keys to move between photos and Esc to close.</p>
     </div>
     <div class="gallery stagger" id="gallery">
-      <button class="g1" data-cap="Main floor from the mezzanine"><picture><source type="image/avif" srcset="assets/hero-overview-800.avif 800w, assets/hero-overview-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/hero-overview-1600.jpg" alt="Main floor from the mezzanine" loading="lazy" srcset="assets/hero-overview-800.jpg 800w, assets/hero-overview-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1600" height="1200" decoding="async"></picture><span>Main floor</span></button>
-      <button class="g2" data-cap="Strength floor under the yellow ducts"><picture><source type="image/avif" srcset="assets/floor-800.avif 800w, assets/floor-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/floor-1600.jpg" alt="Strength floor under the yellow ducts" loading="lazy" srcset="assets/floor-800.jpg 800w, assets/floor-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1600" height="1200" decoding="async"></picture><span>Strength floor</span></button>
-      <button class="g3" data-cap="The yellow studio"><picture><source type="image/avif" srcset="assets/studio-800.avif 800w, assets/studio-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/studio-1600.jpg" alt="The yellow studio" loading="lazy" srcset="assets/studio-800.jpg 800w, assets/studio-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1400" height="1050" decoding="async"></picture><span>Studio</span></button>
-      <button class="g4" data-cap="Paddock lounge"><picture><source type="image/avif" srcset="assets/lounge-800.avif 800w, assets/lounge-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/lounge-1600.jpg" alt="Lounge with gold statue" loading="lazy" srcset="assets/lounge-800.jpg 800w, assets/lounge-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="975" height="1300" decoding="async"></picture><span>Lounge</span></button>
-      <button class="g5" data-cap="Spin bikes on the upper deck"><picture><source type="image/avif" srcset="assets/cycles-800.avif 800w, assets/cycles-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/cycles-1600.jpg" alt="Spin bikes on the upper deck" loading="lazy" srcset="assets/cycles-800.jpg 800w, assets/cycles-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1500" height="1125" decoding="async"></picture><span>Spin bikes</span></button>
-      <button class="g6" data-cap="Functional zone"><picture><source type="image/avif" srcset="assets/functional-800.avif 800w, assets/functional-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/functional-1600.jpg" alt="Functional zone with turf and ropes" loading="lazy" srcset="assets/functional-800.jpg 800w, assets/functional-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="1500" height="1125" decoding="async"></picture><span>Functional</span></button>
-      <button class="g7" data-cap="Treadmills by the windows"><picture><source type="image/avif" srcset="assets/cardio-treadmills-800.avif 800w, assets/cardio-treadmills-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/cardio-treadmills-1600.jpg" alt="Treadmills by the windows" loading="lazy" srcset="assets/cardio-treadmills-800.jpg 800w, assets/cardio-treadmills-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="975" height="1300" decoding="async"></picture><span>Treadmills</span></button>
-      <button class="g8" data-cap="Member of the month"><picture><source type="image/avif" srcset="assets/award-800.avif 800w, assets/award-1600.avif 1600w" sizes="(max-width: 820px) 50vw, 33vw"><img src="assets/award-1600.jpg" alt="Member receiving a trophy in the lounge" loading="lazy" srcset="assets/award-800.jpg 800w, assets/award-1600.jpg 1600w" sizes="(max-width: 820px) 50vw, 33vw" width="825" height="1100" decoding="async"></picture><span>Podium</span></button>
+      <button class="g1" data-cap="Main floor from the mezzanine"><img src="assets/hero-overview.jpg" alt="Main floor from the mezzanine" loading="lazy"><span>Main floor</span></button>
+      <button class="g2" data-cap="Strength floor under the yellow ducts"><img src="assets/floor.jpg" alt="Strength floor under the yellow ducts" loading="lazy"><span>Strength floor</span></button>
+      <button class="g3" data-cap="The yellow studio"><img src="assets/studio.jpg" alt="The yellow studio" loading="lazy"><span>Studio</span></button>
+      <button class="g4" data-cap="Paddock lounge"><img src="assets/lounge.jpg" alt="Lounge with gold statue" loading="lazy"><span>Lounge</span></button>
+      <button class="g5" data-cap="Spin bikes on the upper deck"><img src="assets/cycles.jpg" alt="Spin bikes on the upper deck" loading="lazy"><span>Spin bikes</span></button>
+      <button class="g6" data-cap="Functional zone"><img src="assets/functional.jpg" alt="Functional zone with turf and ropes" loading="lazy"><span>Functional</span></button>
+      <button class="g7" data-cap="Treadmills by the windows"><img src="assets/cardio-treadmills.jpg" alt="Treadmills by the windows" loading="lazy"><span>Treadmills</span></button>
+      <button class="g8" data-cap="Member of the month"><img src="assets/award.jpg" alt="Member receiving a trophy in the lounge" loading="lazy"><span>Podium</span></button>
     </div>
   </div>
 </section>
